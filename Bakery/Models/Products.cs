@@ -21,7 +21,7 @@ namespace Bakery.Models
 
     public Pastry(int count)
     {
-      // Price = 2;
+      Price = 2;
       Count = count;
     }
 
