@@ -13,8 +13,9 @@ namespace Bakery.Program
       Console.WriteLine("[Buy 2 get 1 Free!] \n");
       Console.WriteLine("A Yummy Pastry.....$2");
       Console.WriteLine("[Every 3rd Pastry if Half Price!] \n");
+      
+      
       Console.WriteLine("Would you like to place an Order? [Y/y for YES; Press Enter for NO]");
-
       string orderResponse = Console.ReadLine().ToUpper();
       if (orderResponse == "Y")
       {
@@ -57,6 +58,9 @@ namespace Bakery.Program
         {
           Console.WriteLine("Is this a robbery?");
         }
+      }
+      else{
+
       }
     }
   }
