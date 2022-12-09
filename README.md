@@ -1,8 +1,10 @@
 # Pierre's Bakery
 
-#### C# Independent Project: Cost Calculator
+#### C# Independent Project--> Cost Calculator
 
-#### Contributors: Chris Loveless
+#### Contributors
+
+* Chris Loveless
 
 ## Description
 This project is a basic console application for a bakery to calculate cost. It uses custom classes and auto implemented properties to create orders and output a total cost. Discounts are added based on the quantity of products ordered.
@@ -12,7 +14,6 @@ This project is a basic console application for a bakery to calculate cost. It u
 * _C#_
 * _.NET6_
 * _MS Testing_
-* _here_
 
 ## Setup/Installation Requirements
 
