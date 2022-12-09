@@ -1,5 +1,5 @@
 using System;
-using Bakery;
+using Bakery.Models;
 
 namespace Bakery.Program
 {
@@ -18,13 +18,30 @@ namespace Bakery.Program
       string orderResponse = Console.ReadLine().ToUpper();
       if (orderResponse == "Y")
       {
+        int cost = 0;
         Console.WriteLine("\n How many Loaves of Bread? : ");
         int loafCount = int.Parse(Console.ReadLine());
         Console.WriteLine("\n How many Yummy Pastries? : ");
         int pastryCount = int.Parse(Console.ReadLine());
-        Console.WriteLine($"Bread Count: {loafCount}  Pastry Count: {pastryCount}");
 
-        
+        Bread loaf = new Bread(loafCount);
+        Pastry cake = new Pastry(pastryCount);
+        cost = (loaf.Count * loaf.Price) + (cake.Count * cake.Price);
+
+        if(loaf.Count % 3 == 0)
+        {
+          cost -= (loaf.Count/3) * 5;
+        }
+
+        if(cake.Count % 3 == 0)
+        {
+          cost -= (cake.Count/3);
+        }
+
+        Console.WriteLine("\n Your Order includes:");
+        Console.WriteLine($"Bread Count: {loafCount}  Pastry Count: {pastryCount}");
+        Console.WriteLine($"\n Your Total is: {cost}");
+
       }
     }
   }
