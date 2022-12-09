@@ -24,6 +24,5 @@ namespace Bakery.Models
       Price = 2;
       Count = count;
     }
-
   }
 }

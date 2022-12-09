@@ -7,7 +7,7 @@ namespace Bakery.Program
   {
     static void Main()
     {
-      
+      Console.WriteLine("Welcome to Pierre's Bakery!");
     }
   }
 }
