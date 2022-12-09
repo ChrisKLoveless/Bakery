@@ -15,6 +15,11 @@ namespace Bakery.Program
       Console.WriteLine("[Every 3rd Pastry if Half Price!] \n");
       StartOrder();
 
+      static void errorRestart()
+      {
+        Console.WriteLine("Sorry that response was not valid please try again.");
+            StartOrder();
+      }
       static void StartOrder()
       {
         Console.WriteLine("Would you like to place an Order? [Y/y for YES; Press Enter for NO]");
@@ -35,10 +40,17 @@ namespace Bakery.Program
             {
               cost -= (loaf.Count/3) * 5;
             }
+            else
+            {
+              errorRestart();
+            }
 
             if(cake.Count % 3 == 0)
             {
               cost -= (cake.Count/3);
+            }
+            else{
+              errorRestart();
             }
 
             Console.WriteLine("\n Your Order includes:");
@@ -61,9 +73,9 @@ namespace Bakery.Program
               Console.WriteLine("Is this a robbery?");
             }
           }
-          else{
-            Console.WriteLine("Sorry that response was not valid please try again.");
-            StartOrder();
+          else
+          {
+            errorRestart();
           }
       }
       
