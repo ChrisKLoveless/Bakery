@@ -40,8 +40,23 @@ namespace Bakery.Program
 
         Console.WriteLine("\n Your Order includes:");
         Console.WriteLine($"Bread Count: {loafCount}  Pastry Count: {pastryCount}");
-        Console.WriteLine($"\n Your Total is: {cost}");
+        Console.WriteLine($"\n Your Total is: ${cost}");
+        Console.WriteLine("Please enter Your Total Cost to Pay: ");
 
+        int costResponse = int.Parse(Console.ReadLine());
+
+        if(costResponse == cost)
+        {
+          Console.WriteLine("Thank you for your business!");
+        }
+        else if(costResponse > cost)
+        {
+          Console.WriteLine("WOW a Tip! Thank you for your business!");
+        }
+        else
+        {
+          Console.WriteLine("Is this a robbery?");
+        }
       }
     }
   }
