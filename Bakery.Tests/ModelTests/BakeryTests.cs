@@ -37,9 +37,17 @@ namespace Bakery.TestTools
     [TestMethod]
       public void PastryConstructor_CreatesInstanceOfPastry_Pastry()
       {
-        Pastry cake = new Pastry();
+        Pastry cake = new Pastry(1);
         Assert.AreEqual(typeof(Pastry), cake.GetType());
       }
+
+    [TestMethod]
+      public void PastryConstructor_ReturnsCountOfPastry_Count()
+      {
+        int count = 1;
+        Pastry cake = new Pastry(count);
+        Assert.AreEqual(count, cake.Count);
+      } 
   }
 }
 
