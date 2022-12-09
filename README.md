@@ -2,7 +2,7 @@
 
 #### C# Independent Project--> Cost Calculator
 
-#### Contributors
+## Contributors
 
 * Chris Loveless
 
