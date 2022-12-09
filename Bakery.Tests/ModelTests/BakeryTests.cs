@@ -15,11 +15,19 @@ namespace Bakery.TestTools
       }
 
     [TestMethod]
-      public void BreadConstructor_ReturnsCountOfOrder_Count()
+      public void BreadConstructor_ReturnsCountOfBread_Count()
       {
         int count = 1;
         Bread loaf = new Bread(count);
         Assert.AreEqual(count, loaf.Count);
+      }
+
+    [TestMethod]
+      public void BreadConstructor_ReturnsPriceOfBread_Price()
+      {
+        int price = 5;
+        Bread loaf = new Bread(1);
+        Assert.AreEqual(price, loaf.Price);
       }
   }
 
