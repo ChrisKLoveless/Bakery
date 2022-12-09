@@ -7,4 +7,9 @@ namespace Bakery.Models
     // public int Price { get; set; }
     // public int Count { get; set; }
   }
+
+  public class Pastry
+  {
+    
+  }
 }
