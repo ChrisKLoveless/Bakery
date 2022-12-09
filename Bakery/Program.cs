@@ -12,7 +12,7 @@ namespace Bakery.Program
       Console.WriteLine("Loaf of Bread.....$5");
       Console.WriteLine("[Buy 2 get 1 Free!] \n");
       Console.WriteLine("A Yummy Pastry.....$2");
-      Console.WriteLine("[Every 3rd Pastry if Half Price!] \n");
+      Console.WriteLine("[Get 3 for $5!] \n");
       StartOrder();
 
       static void ErrorRestart()
@@ -32,13 +32,21 @@ namespace Bakery.Program
             int cost = 0;
             Console.WriteLine("\n How many Loaves of Bread? : ");
             int loafCount = int.Parse(Console.ReadLine());
+            Bread loaf = new Bread(loafCount);
+            if(loaf.Count < 0)
+            {
+              ErrorRestart();
+            }
+
             Console.WriteLine("\n How many Yummy Pastries? : ");
             int pastryCount = int.Parse(Console.ReadLine());
-
-            Bread loaf = new Bread(loafCount);
             Pastry cake = new Pastry(pastryCount);
-            cost = (loaf.Count * loaf.Price) + (cake.Count * cake.Price);
+            if(cake.Count < 0)
+            {
+              ErrorRestart();
+            }
         
+            cost = (loaf.Count * loaf.Price) + (cake.Count * cake.Price);
             if(loaf.Count % 3 == 0)
             {
               cost -= (loaf.Count/3) * 5;
@@ -74,7 +82,7 @@ namespace Bakery.Program
             ErrorRestart();
           }
         }
-        else if(orderResponse == "" || orderResponse == "N" || orderResponse == "NO")
+        else if(orderResponse == "" || orderResponse == "N" || orderResponse == "NO" || orderResponse == "E" || orderResponse == "EXIT")
         {
           Environment.Exit(1);
         }
