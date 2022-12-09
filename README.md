@@ -17,7 +17,7 @@ This project is a basic console application for a bakery to calculate cost. It u
 
 ## Setup/Installation Requirements
 
-* Clone down the git repo to the ```desktop```
+* Clone down the git repo ```https://github.com/ChrisKLoveless/Bakery.git``` to the ```desktop```
 * Restore required packages: change directory to Bakery and Backery.Tests and restore with ```$ dotnet restore```
 * While in the Bakery directory use ```$ dotnet build``` to build the program
 * While in the Bakery directory use ```$ dotnet run``` to run the program 
