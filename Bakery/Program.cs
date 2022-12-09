@@ -15,70 +15,74 @@ namespace Bakery.Program
       Console.WriteLine("[Every 3rd Pastry if Half Price!] \n");
       StartOrder();
 
-      static void errorRestart()
+      static void ErrorRestart()
       {
         Console.WriteLine("Sorry that response was not valid please try again.");
             StartOrder();
       }
+
       static void StartOrder()
       {
         Console.WriteLine("Would you like to place an Order? [Y/y for YES; Press Enter for NO]");
         string orderResponse = Console.ReadLine().ToUpper();
-          if (orderResponse == "Y")
+          if (orderResponse == "Y" || orderResponse == "YES")
           {
-            int cost = 0;
-            Console.WriteLine("\n How many Loaves of Bread? : ");
-            int loafCount = int.Parse(Console.ReadLine());
-            Console.WriteLine("\n How many Yummy Pastries? : ");
-            int pastryCount = int.Parse(Console.ReadLine());
-
-            Bread loaf = new Bread(loafCount);
-            Pastry cake = new Pastry(pastryCount);
-            cost = (loaf.Count * loaf.Price) + (cake.Count * cake.Price);
-
-            if(loaf.Count % 3 == 0)
+            try
             {
-              cost -= (loaf.Count/3) * 5;
-            }
-            else
-            {
-              errorRestart();
-            }
+              int cost = 0;
+              Console.WriteLine("\n How many Loaves of Bread? : ");
+              int loafCount = int.Parse(Console.ReadLine());
+              Console.WriteLine("\n How many Yummy Pastries? : ");
+              int pastryCount = int.Parse(Console.ReadLine());
 
-            if(cake.Count % 3 == 0)
-            {
-              cost -= (cake.Count/3);
-            }
-            else{
-              errorRestart();
-            }
+              Bread loaf = new Bread(loafCount);
+              Pastry cake = new Pastry(pastryCount);
+              cost = (loaf.Count * loaf.Price) + (cake.Count * cake.Price);
+          
+              if(loaf.Count % 3 == 0)
+              {
+                cost -= (loaf.Count/3) * 5;
+              }
+              
+              if(cake.Count % 3 == 0)
+              {
+                cost -= (cake.Count/3);
+              }
 
-            Console.WriteLine("\n Your Order includes:");
-            Console.WriteLine($"Bread Count: {loafCount}  Pastry Count: {pastryCount}");
-            Console.WriteLine($"\n Your Total is: ${cost}");
-            Console.WriteLine("Please enter Your Total Cost to Pay: ");
+              Console.WriteLine("\n Your Order includes:");
+              Console.WriteLine($"Bread Count: {loafCount}  Pastry Count: {pastryCount}");
+              Console.WriteLine($"\n Your Total is: ${cost}");
+              Console.WriteLine("Please enter Your Total Cost to Pay: ");
 
-            int costResponse = int.Parse(Console.ReadLine());
+              int costResponse = int.Parse(Console.ReadLine());
 
-            if(costResponse == cost)
-            {
-              Console.WriteLine("Thank you for your business!");
+              if(costResponse == cost)
+              {
+                Console.WriteLine("Thank you for your business!");
+              }
+              else if(costResponse > cost)
+              {
+                Console.WriteLine("WOW a Tip! Thank you for your business!");
+              }
+              else
+              {
+                Console.WriteLine("Is this a robbery?");
+              }
             }
-            else if(costResponse > cost)
+            catch
             {
-              Console.WriteLine("WOW a Tip! Thank you for your business!");
+              ErrorRestart();
             }
-            else
-            {
-              Console.WriteLine("Is this a robbery?");
-            }
+          }
+          else if(orderResponse == "" || orderResponse == "N" || orderResponse == "NO")
+          {
+            Environment.Exit(1);
           }
           else
           {
-            errorRestart();
-          }
+            ErrorRestart();
+          } 
       }
-      
     }
   }
 }
