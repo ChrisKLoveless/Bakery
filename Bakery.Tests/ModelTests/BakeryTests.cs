@@ -55,6 +55,15 @@ namespace Bakery.TestTools
         Pastry cake = new Pastry(1);
         Assert.AreEqual(price, cake.Price);
       }   
+
+    [TestMethod]
+      public void OrderPrice_ReturnsPriceOfPastryOrder_Int()
+      {
+        int order = 2;
+        Pastry cake = new Pastry(1);
+        int orderPrice = cake.OrderPrice();
+        Assert.AreEqual(order, orderPrice);
+      }   
   }
 }
 
