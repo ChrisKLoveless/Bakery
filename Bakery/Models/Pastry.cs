@@ -13,8 +13,7 @@ namespace Bakery.Models
 
     public int OrderPrice()
     {
-      return 0;
-      // this.Price * this.Count;
+      return this.Price * this.Count;
     }
   }
 }
