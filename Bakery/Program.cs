@@ -46,7 +46,7 @@ namespace Bakery.Program
               ErrorRestart();
             }
         
-            cost = (loaf.Count * loaf.Price) + (cake.Count * cake.Price);
+            cost = (loaf.OrderPrice()) + (cake.OrderPrice());
             if(loaf.Count % 3 == 0)
             {
               cost -= (loaf.Count/3) * 5;
