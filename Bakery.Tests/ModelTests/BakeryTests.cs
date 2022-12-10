@@ -63,7 +63,16 @@ namespace Bakery.TestTools
         Pastry cake = new Pastry(1);
         int orderPrice = cake.OrderPrice();
         Assert.AreEqual(order, orderPrice);
-      }   
+      } 
+
+    [TestMethod]
+      public void OrderPrice_ReturnsPriceOfBreadOrder_Int()
+      {
+        int order = 5;
+        Bread loaf = new Bread(1);
+        int orderPrice = loaf.OrderPrice();
+        Assert.AreEqual(order, orderPrice);
+      }       
   }
 }
 

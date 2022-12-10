@@ -10,5 +10,10 @@ namespace Bakery.Models
       Price = 5;
       Count = count;
     }
+
+    public int OrderPrice()
+    {
+      return 0;
+    }
   }
 }
